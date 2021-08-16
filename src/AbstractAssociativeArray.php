@@ -36,7 +36,7 @@ abstract class AbstractAssociativeArray extends TestCase
      */
     private static function recursiveAssociativeAssertion($expected, $actual, $message = '')
     {
-        self::assertThat(array_keys($expected), new IsEqual(array_keys($actual), 0.0, true), $message);
+        self::assertEqualsCanonicalizing(array_keys($expected), array_keys($actual), $message);
         foreach ($expected as $key => $value) {
             if (\is_array($value)) {
                 self::recursiveAssociativeAssertion($expected[$key], $actual[$key], $message);
