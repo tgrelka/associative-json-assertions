@@ -43,7 +43,7 @@ abstract class AbstractAssociativeArray extends TestCase
             } else if (is_callable($value)) {
                 $value($actual[$key], $message);
             } else {
-                self::assertSame($actual[$key], $value, $message);
+                self::assertSame($value, $actual[$key], $message);
             }
         }
     }
